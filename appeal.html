@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YouTube Appeal Generator</title>
+<style>
+body{
+font-family: Arial;
+background:#f2f2f2;
+padding:20px;
+}
+.container{
+background:#fff;
+padding:20px;
+border-radius:10px;
+max-width:500px;
+margin:auto;
+}
+input,select,textarea{
+width:100%;
+padding:10px;
+margin:5px 0;
+}
+button{
+background:red;
+color:#fff;
+padding:10px;
+border:none;
+width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>YouTube Appeal Generator</h2>
+
+<input id="name" placeholder="Channel Name">
+
+<input id="url" placeholder="Channel URL">
+
+<select id="monetize">
+<option>Monetized</option>
+<option>Non Monetized</option>
+</select>
+
+<input id="reason" placeholder="Termination Reason">
+
+<textarea id="explain" placeholder="Explain Your Issue"></textarea>
+
+<button onclick="generate()">Generate Appeal</button>
+
+<textarea id="output" rows="10"></textarea>
+
+</div>
+
+<script>
+
+function generate(){
+
+let name=document.getElementById("name").value;
+let url=document.getElementById("url").value;
+let monetize=document.getElementById("monetize").value;
+let reason=document.getElementById("reason").value;
+let explain=document.getElementById("explain").value;
+
+let text="Dear YouTube Team,\n\nMy channel "+name+" ("+url+") has been terminated due to "+reason+". My channel was "+monetize+".\n\nI believe this was a mistake. "+explain+"\n\nI always follow YouTube community guidelines and never violate policies intentionally.\n\nPlease review my channel again.\n\nThank You.";
+
+document.getElementById("output").value=text;
+
+}
+
+</script>
+
+</body>
+</html>
